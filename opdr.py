@@ -1,13 +1,7 @@
 import csv
 from csv import *
-# from email import header
 import os
 from datetime import datetime
-# import re
-
-# from matplotlib import category
-# from numpy import rint
-# from torch import cat
 
 # Constants
 DATA_FILE = 'test.csv'
@@ -57,15 +51,6 @@ class ExpenseTracker: # Class Event Tracker
                 return
 
             self.categories.add(category)
-            # headers.append(category)
-            # headers.update(self.categories)
-           
-            
-            # with open(DATA_FILE, 'w', newline='') as csvfile:
-            #     writer = csv.DictWriter(csvfile, fieldnames=headers)
-            #     writer.writeheader()
-            #     writer.writerows(rows)
-                
 
     
     def export_to_excel(self, filename): #5 Function to export data to excel sheet
@@ -77,9 +62,7 @@ class ExpenseTracker: # Class Event Tracker
             headers = next(reader)
             # categories.extend(headers)
             self.categories.update(headers)
-        # print(categories)
-        # for item in categories:
-        #     print(item)
+
         for i in range(1, len(categories)):
             print(f"{i}: {categories[i]}")
         csvfile.close()
